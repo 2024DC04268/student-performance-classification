@@ -103,14 +103,13 @@ if st.button("Predict Performance"):
         input_df[col] = input_df[col].map(categorical_map[col])
 
     # Scaling (same as training)
-    scaler = StandardScaler()
-    input_scaled = scaler.fit_transform(input_df)
+   # scaler = StandardScaler()
+    #input_scaled = scaler.fit_transform(input_df)
 
     #prediction = model.predict(input_scaled)
 
     model = joblib.load("model.pkl")
 prediction = model.predict(input_df)
-
     if prediction[0] == 1:
         st.success("Prediction: PASS")
     else:
