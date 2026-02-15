@@ -108,7 +108,7 @@ if st.button("Predict Performance"):
 
     #prediction = model.predict(input_scaled)
 
-    model = joblib.load("model.pkl")
+    #model = joblib.load("model.pkl")
 prediction = model.predict(input_df)
 
 if prediction[0] == 1:
