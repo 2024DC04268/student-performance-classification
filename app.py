@@ -110,7 +110,8 @@ if st.button("Predict Performance"):
 
     model = joblib.load("model.pkl")
 prediction = model.predict(input_df)
-    if prediction[0] == 1:
-        st.success("Prediction: PASS")
-    else:
-        st.error("Prediction: FAIL")
+
+if prediction[0] == 1:
+    st.success("Prediction: PASS")
+else:
+    st.error("Prediction: FAIL")
