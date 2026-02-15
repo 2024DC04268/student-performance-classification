@@ -106,7 +106,7 @@ if st.button("Predict Performance"):
     scaler = StandardScaler()
     input_scaled = scaler.fit_transform(input_df)
 
-    prediction = model.predict(input_scaled)
+    #prediction = model.predict(input_scaled)
 
     model = joblib.load("model.pkl")
 prediction = model.predict(input_df)
