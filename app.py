@@ -16,7 +16,7 @@ model = pickle.load(open("model/xgboost.pkl", "rb"))
 # INPUT SECTION
 # -------------------------------
 
-st.header("📋 Enter Student Details")
+st.header("Enter Student Details")
 
 # Demographic
 school = st.selectbox("School", ["GP", "MS"])
@@ -57,7 +57,7 @@ absences = st.slider("Absences", 0, 100, 5)
 # DATA PREPARATION
 # -------------------------------
 
-if st.button("🔍 Predict Performance"):
+if st.button("Predict Performance"):
 
     input_dict = {
         "school": school,
@@ -109,6 +109,6 @@ if st.button("🔍 Predict Performance"):
     prediction = model.predict(input_scaled)
 
     if prediction[0] == 1:
-        st.success("🎉 Prediction: PASS")
+        st.success("Prediction: PASS")
     else:
-        st.error("❌ Prediction: FAIL")
+        st.error("Prediction: FAIL")
